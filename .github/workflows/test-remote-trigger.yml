@@ -13,9 +13,8 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - env:
-        JIRA_TICKET_ID: ${{ github.event.client_payload.jira_ticket_id }}
-
       # Runs a single command using the runners shell
       - name: Run a one-line script
+        env:
+          JIRA_TICKET_ID: ${{ github.event.client_payload.jira_ticket_id }}
         run: echo Hello, world! $JIRA_TICKET_ID
