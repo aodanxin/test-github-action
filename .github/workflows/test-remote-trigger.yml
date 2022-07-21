@@ -26,8 +26,9 @@ jobs:
 
       - name: Change something and push the changes
         working-directory: web-brand
-        run: |
-          echo "This is a test" >> a_new_file
+        run:
+          sed -i '/Navigation/i \
+            Ignore' Analytics.feature
 
       - name: Create a pull request
         uses: peter-evans/create-pull-request@v4
