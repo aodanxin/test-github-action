@@ -7,6 +7,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: web-brand
     steps:
       - name: Run a one-line script
         env:
@@ -35,7 +38,6 @@ jobs:
           git push
 
       - name: Create a pull request
-        run: cd web-brand
         uses: repo-sync/pull-request@v2
         with:
           pr_title: Test the github action to create a PR
