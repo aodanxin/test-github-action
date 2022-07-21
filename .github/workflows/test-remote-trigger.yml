@@ -26,7 +26,7 @@ jobs:
           ref: aodan.xin/test-github-action
           token: ${{ secrets.PAT }}
           path: web-brand
-          
+
       - name: Set a user
         run: |
           git config --global user.name "Aodan Xin"
@@ -36,5 +36,9 @@ jobs:
         run: |
           cd web-brand
           echo "This is a test" >> a_new_file
+
+      - name: Commit and push the change
+        run: |
           git add .
           git commit -m "This is a test"
+          git push
