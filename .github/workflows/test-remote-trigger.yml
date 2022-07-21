@@ -26,6 +26,11 @@ jobs:
           ref: aodan.xin/test-github-action
           token: ${{ secrets.PAT }}
           path: web-brand
+          
+      - name: Set a user
+        run: |
+          git config --global user.name "Aodan Xin"
+          git config --global user.email "aodan.xin@faire.com"
 
       - name: Change something
         run: |
