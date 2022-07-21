@@ -15,7 +15,7 @@ jobs:
         uses: actions/checkout@v3
         with: 
           repository: Faire/web-brand
-          ref: aodan.xin/test-github-action
+          # ref: aodan.xin/test-github-action
           token: ${{ secrets.PAT }}
           path: web-brand
 
@@ -28,15 +28,13 @@ jobs:
         working-directory: web-brand
         run: |
           echo "This is a test" >> a_new_file
-          git add .
-          git commit -m "This is a test"
-          git push
 
       - name: Create a pull request
         uses: peter-evans/create-pull-request@v4
         with:
-          base: master
-          branch: aodan.xin/test-github-action
+          base: aodan.xin/test-github-action
+          branch: aodan.xin/test-github-action-pr
+          commit-message: "Ignore E2E scenario name"
           title: Test the github action to create a PR
           reviewers: "bryan-holder-faire"
           path: web-brand
