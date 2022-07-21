@@ -29,5 +29,6 @@ jobs:
       - name: Change something
         run: |
           cd web-brand
-          yarn add @faire/web --latest
+          touch a_new_file
+          git add .
           git status
