@@ -29,7 +29,7 @@ jobs:
         run:
           sed -i '/Navigation/i \
             # JIRA TIcket ID \\\n
-            @Ignore' cypress/integration/testFiles/Analytics.feature
+            Ignore' cypress/integration/testFiles/Analytics.feature
 
       - name: Create a pull request
         uses: peter-evans/create-pull-request@v4
