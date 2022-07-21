@@ -28,7 +28,7 @@ jobs:
         working-directory: web-brand
         run:
           sed -i '/Navigation/i \
-            JIRA TIcket ID \\\n
+            JIRA TIcket ID
             Ignore' cypress/integration/testFiles/Analytics.feature
 
       - name: Create a pull request
