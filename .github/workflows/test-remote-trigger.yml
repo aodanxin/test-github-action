@@ -28,5 +28,5 @@ jobs:
 
       - name: Change something
         run: |
-          yarn upgrade @faire/web --latest
+          yarn add @faire/web --latest
           git status
