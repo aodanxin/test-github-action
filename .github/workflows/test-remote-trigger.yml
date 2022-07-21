@@ -24,9 +24,10 @@ jobs:
         with: 
           repository: Faire/web-brand
           token: ${{ secrets.PAT }}
-          path: web-retailer
+          path: web-brand
 
       - name: Change something
         run: |
+          cd web-brand
           yarn add @faire/web --latest
           git status
