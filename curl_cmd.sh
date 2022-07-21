@@ -6,4 +6,4 @@ curl \
   -H "Accept: application/vnd.github+json" \
   -H "Authorization: token $GITHUB_TOKEN" \
   $URL \
-  -d '{"event_type":"remote_trigger", "client_payload": {"repo":"web-brand", "jira_ticket_id":"FD-1234", "file_path":"cypress/integration/testFiles/Analytics.feature", "scenario_name": "Navigation", "reviewer":"bryan-holder-faire"}}'
+  -d '{"event_type":"remote_trigger", "client_payload": {"repo":"web-brand", "jira_ticket_id":"FD-1234", "file_path":"cypress/integration/testFiles/Analytics.feature", "scenario_name": "Filter data by a preset time interval", "reviewer":"bryan-holder-faire"}}'
