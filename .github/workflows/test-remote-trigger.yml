@@ -29,6 +29,8 @@ jobs:
       - name: Change something
         run: |
           cd web-brand
-          touch a_new_file
+          git checkout aodan.xin/test-github-action
+          echo "This is a test" >> a_new_file
           git add .
-          git status
+          git commit -m "This is a test"
+          git push
