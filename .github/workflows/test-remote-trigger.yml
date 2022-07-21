@@ -33,8 +33,9 @@ jobs:
           git push
 
       - name: Create a pull request
-        uses: repo-sync/pull-request@v2
+        uses: peter-evans/create-pull-request@v4
         with:
-          pr_title: Test the github action to create a PR
-          pr_reviewer: "bryan-holder-faire"
-          github_token: ${{ secrets.PAT }}
+          title: Test the github action to create a PR
+          reviewers: "bryan-holder-faire"
+          path: web-brand
+          token: ${{ secrets.PAT }}
