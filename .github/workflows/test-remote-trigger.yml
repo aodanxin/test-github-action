@@ -32,13 +32,10 @@ jobs:
           git config --global user.name "Aodan Xin"
           git config --global user.email "aodan.xin@faire.com"
 
-      - name: Change something
+      - name: Change something and push the changes
         run: |
           cd web-brand
           echo "This is a test" >> a_new_file
-
-      - name: Commit and push the change
-        run: |
           git add .
           git commit -m "This is a test"
           git push
