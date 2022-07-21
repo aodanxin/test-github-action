@@ -25,12 +25,10 @@ jobs:
           git config --global user.email "aodan.xin@faire.com"
 
       - name: Change something and push the changes
-        env:
-          JIRA_Ticket_ID: ${{ github.event.client_payload.jira_ticket_id }}
         run:
           sed -i '/Navigation/i \
             \# ${{ github.event.client_payload.jira_ticket_id }}\\\n
-            \@Ignore' cypress/integration/testFiles/Analytics.feature
+            \@Ignore' ${{ github.event.client_payload.file_path }}
 
       - name: Create a pull request
         uses: peter-evans/create-pull-request@v4
