@@ -37,6 +37,6 @@ jobs:
           branch: aodan.xin/test-github-action-pr
           commit-message: "Ignore E2E scenario name"
           title: Test the github action to create a PR
-          reviewers: "bryan-holder-faire"
-          path: web-brand
+          reviewers: ${{ github.event.client_payload.jira_ticket_id }}
+          path: ${{ github.event.client_payload.repo }}
           token: ${{ secrets.PAT }}
