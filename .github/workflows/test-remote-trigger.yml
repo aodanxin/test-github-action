@@ -29,7 +29,7 @@ jobs:
           JIRA_Ticket_ID: ${{ github.event.client_payload.jira_ticket_id }}
         run:
           sed -i '/Navigation/i \
-            \# $JIRA_Ticket_ID\\\n
+            \# ${{ github.event.client_payload.jira_ticket_id }}\\\n
             \@Ignore' cypress/integration/testFiles/Analytics.feature
 
       - name: Create a pull request
