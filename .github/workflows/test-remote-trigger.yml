@@ -35,6 +35,7 @@ jobs:
       - name: Create a pull request
         uses: peter-evans/create-pull-request@v4
         with:
+          branch: aodan.xin/test-github-action
           title: Test the github action to create a PR
           reviewers: "bryan-holder-faire"
           path: web-brand
