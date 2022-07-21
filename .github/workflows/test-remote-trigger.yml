@@ -7,10 +7,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./web-brand
-
     steps:
       - name: Run a one-line script
         env:
@@ -31,6 +27,7 @@ jobs:
           git config --global user.email "aodan.xin@faire.com"
 
       - name: Change something and push the changes
+        working-directory: web-brand
         run: |
           echo "This is a test" >> a_new_file
           git add .
@@ -39,6 +36,7 @@ jobs:
 
       - name: Create a pull request
         uses: repo-sync/pull-request@v2
+        working-directory: web-brand
         with:
           pr_title: Test the github action to create a PR
           pr_reviewer: "bryan-holder-faire"
