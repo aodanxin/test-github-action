@@ -35,8 +35,8 @@ jobs:
           git push
 
       - name: Create a pull request
+        run: cd web-brand
         uses: repo-sync/pull-request@v2
-        working-directory: web-brand
         with:
           pr_title: Test the github action to create a PR
           pr_reviewer: "bryan-holder-faire"
