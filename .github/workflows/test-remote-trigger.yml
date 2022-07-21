@@ -31,7 +31,7 @@ jobs:
         uses: peter-evans/create-pull-request@v4
         with:
           base: aodan.xin/test-github-action
-          branch: aodan.xin/test-github-action-pr
+          branch: ${{ github.event.client_payload.jira_ticket_id }}/ignore-e2e
           commit-message: Ignore E2E test ${{ github.event.client_payload.scenario_name }}
           title: Ignore unstable E2E ${{ github.event.client_payload.scenario_name }}
           body: Ignore unstable E2E ${{ github.event.client_payload.scenario_name }}
