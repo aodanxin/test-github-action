@@ -22,7 +22,11 @@ jobs:
       - name: Checkout web repo
         uses: actions/checkout@v3
         with: 
-          repository: Faire/web-retailer
+          repository: Faire/web-brand
           token: ${{ secrets.PAT }}
           path: web-retailer
 
+      - name: Change something
+        run: |
+          yarn upgrade @faire/web --latest
+          git status
