@@ -9,15 +9,15 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: web-brand
+        working-directory: ${{ github.event.client_payload.repo }}
     steps:
       - name: Checkout web repo
         uses: actions/checkout@v3
         with: 
-          repository: Faire/web-brand
+          repository: Faire/${{ github.event.client_payload.repo }}
           # ref: aodan.xin/test-github-action
           token: ${{ secrets.PAT }}
-          path: web-brand
+          path: ${{ github.event.client_payload.repo }}
 
       - name: Set a user
         run: |
@@ -25,7 +25,6 @@ jobs:
           git config --global user.email "aodan.xin@faire.com"
 
       - name: Change something and push the changes
-        working-directory: web-brand
         run:
           sed -i '/Navigation/i \
             \# JIRA TIcket ID\\\n
