@@ -18,3 +18,10 @@ jobs:
         env:
           JIRA_TICKET_ID: ${{ github.event.client_payload.jira_ticket_id }}
         run: echo Hello, world! $JIRA_TICKET_ID
+      
+      - name: Checkout web repo
+        uses: actions/checkout@v3
+        with: 
+          repository: Faire/web-retailer
+          path: web-retailer
+
