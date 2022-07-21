@@ -39,3 +39,10 @@ jobs:
           git add .
           git commit -m "This is a test"
           git push
+          
+      - name: Create a pull request
+        uses: repo-sync/pull-request@v2
+        with:
+          pr_title: Test the github action to create a PR
+          pr_reviewer: "bryan-holder-faire"
+          github_token: ${{ secrets.PAT }}
