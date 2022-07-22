@@ -2,7 +2,7 @@ name: Test Remote Trigger
 
 on:
   repository_dispatch:
-    types: [remote_trigger]
+    types: [ignore_e2e_pr]
 
 jobs:
   build:
@@ -32,7 +32,7 @@ jobs:
         with:
           base: aodan.xin/test-github-action
           branch: ${{ github.event.client_payload.jira_ticket_id }}/ignore-e2e
-          commit-message: Ignore E2E test ${{ github.event.client_payload.scenario_name }}
+          commit-message: Ignore E2E test
           title: Ignore unstable E2E ${{ github.event.client_payload.scenario_name }}
           body: Ignore unstable E2E ${{ github.event.client_payload.scenario_name }}
           reviewers: ${{ github.event.client_payload.reviewer }}
