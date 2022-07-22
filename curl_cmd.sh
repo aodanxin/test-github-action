@@ -1,5 +1,6 @@
 #!/bin/bash
 URL=https://api.github.com/repos/aodanxin/test-github-action/dispatches
+PR_BOT_ACTION_URL=https://api.github.com/repos/Faire/pr-bot/dispatches
 
 curl \
   -X POST \
