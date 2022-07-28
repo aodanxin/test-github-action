@@ -25,7 +25,7 @@ jobs:
 
       - name: Change something and push the changes
         run:
-          sed -i '/${{ github.event.client_payload.scenario_name }}$/i \  \# ${{ github.event.client_payload.jira_ticket_id }}\n  \@Ignore' ${{ github.event.client_payload.file_path }}
+          sed -i '/${{ github.event.client_payload.scenario_name }}[ ]*$/i \  \# ${{ github.event.client_payload.jira_ticket_id }}\n  \@Ignore' ${{ github.event.client_payload.file_path }}
 
       - name: Create a pull request
         uses: peter-evans/create-pull-request@v4
@@ -36,5 +36,6 @@ jobs:
           title: Ignore unstable E2E ${{ github.event.client_payload.scenario_name }}
           body: Ignore unstable E2E ${{ github.event.client_payload.scenario_name }}
           reviewers: ${{ github.event.client_payload.reviewer }}
+          draft: true
           path: ${{ github.event.client_payload.repo }}
           token: ${{ secrets.PAT }}
