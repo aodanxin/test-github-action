@@ -30,7 +30,7 @@ jobs:
       - name: Create a pull request
         uses: peter-evans/create-pull-request@v4
         with:
-          base: aodan.xin/test-github-action
+          base: master
           branch: ${{ github.event.client_payload.jira_ticket_id }}/ignore-e2e
           commit-message: Ignore E2E test
           title: Ignore unstable E2E ${{ github.event.client_payload.scenario_name }}
